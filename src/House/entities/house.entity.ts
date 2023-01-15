@@ -16,7 +16,7 @@ export class House {
 
   @Column()
   @IsString()
-  @MaxLength(15)
+  @MaxLength(100)
   @MinLength(3)
   public address: string;
 

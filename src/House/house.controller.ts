@@ -11,6 +11,7 @@ import {
 import { HouseService } from './house.service';
 import { CreateHouseDto } from './dto/create-house.dto';
 import { UpdateHouseDto } from './dto/update-house.dto';
+import { House } from './entities/house.entity';
 
 @Controller('house')
 export class HouseController {
@@ -21,10 +22,10 @@ export class HouseController {
     return this.houseService.findAll();
   }
 
-  @Get(':uuid')
-  async findOne(@Param('uuid') uuid: string) {
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
     try {
-      const result = await this.houseService.findOne(uuid);
+      const result = await this.houseService.findOne(id);
       return result;
     } catch {
       throw new NotFoundException();
@@ -36,13 +37,13 @@ export class HouseController {
     return this.houseService.create(createHouseDto);
   }
 
-  @Patch(':uuid')
-  update(@Param('uuid') uuid: string, @Body() updateHouseDto: UpdateHouseDto) {
-    return this.houseService.update(uuid, updateHouseDto);
+  @Patch(':is')
+  update(@Param('id') id: string, @Body() updateHouseDto: UpdateHouseDto) {
+    return this.houseService.update(id, updateHouseDto);
   }
 
-  @Delete(':uuid')
-  remove(@Param('uuid') uuid: string) {
-    return this.houseService.remove(uuid);
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.houseService.remove(id);
   }
 }

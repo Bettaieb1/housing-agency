@@ -19,19 +19,19 @@ export class HouseService {
     return this.houseRepo.find();
   }
 
-  findOne(uuid: string) {
-    return this.houseRepo.findOneByOrFail({ id: uuid });
+  findOne(id: string) {
+    return this.houseRepo.findOneByOrFail({ id: id });
   }
 
-  findByUser(uuid: string) {
-    return this.houseRepo.find({ where: { owner: { id: uuid } } });
+  findByUser(id: string) {
+    return this.houseRepo.find({ where: { owner: { id: id } } });
   }
 
-  update(uuid: string, updateHouseDto: UpdateHouseDto) {
-    return this.houseRepo.update({ id: uuid }, updateHouseDto);
+  update(id: string, updateHouseDto: UpdateHouseDto) {
+    return this.houseRepo.update({ id: id }, updateHouseDto);
   }
 
-  remove(uuid: string) {
-    return this.houseRepo.delete({ id: uuid });
+  remove(id: string) {
+    return this.houseRepo.delete({ id: id });
   }
 }

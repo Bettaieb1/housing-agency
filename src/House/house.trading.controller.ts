@@ -5,13 +5,13 @@ import { Controller, Body, Post, Param, Delete } from '@nestjs/common';
 export class HouseTradingController {
   constructor(private readonly houseTradingService: HouseTradingService) {}
 
-  @Post(':huuid')
-  create(@Param('huuid') hid: string, @Body() userData: { userEmail: string }) {
+  @Post(':hid')
+  create(@Param('hid') hid: string, @Body() userData: { userEmail: string }) {
     return this.houseTradingService.create(hid, userData.userEmail);
   }
 
-  @Delete(':huuid')
-  remove(@Param(':huuid') id: string) {
+  @Delete(':hid')
+  remove(@Param(':hid') id: string) {
     return this.houseTradingService.remove(id);
   }
 }
