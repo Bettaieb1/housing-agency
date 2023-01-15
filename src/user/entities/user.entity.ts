@@ -36,6 +36,6 @@ export class User {
   @MaxLength(15)
   public lastName: string;
 
-  @OneToMany(() => House, (house) => house.owner)
+  @OneToMany(() => House, (house) => house.owner, { cascade: true })
   public ownerHouses?: House[];
 }

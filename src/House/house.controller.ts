@@ -36,7 +36,7 @@ export class HouseController {
     return this.houseService.create(createHouseDto);
   }
 
-  @Patch(':is')
+  @Patch(':id')
   update(@Param('id') id: string, @Body() updateHouseDto: UpdateHouseDto) {
     return this.houseService.update(id, updateHouseDto);
   }
