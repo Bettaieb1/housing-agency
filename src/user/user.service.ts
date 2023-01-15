@@ -10,7 +10,7 @@ export class UserService {
     @InjectRepository(User)
     private usersRepository: Repository<User>,
   ) {}
-  create(user: Omit<User, 'uuid'>) {
+  create(user: Omit<User, 'id'>) {
     return this.usersRepository.save(user);
   }
 

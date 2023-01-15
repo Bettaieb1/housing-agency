@@ -27,10 +27,14 @@ export class AuthService {
 
   async signup(user: CreateUserDto) {
     const hashedPassword = await this.hash(user.password);
+    user.password = null;
     const newUser = await this.usersService.create({
       ...user,
       hashedPassword,
     });
+
+    console.log(newUser);
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { hashedPassword: _, ...userWithoutPassword } = newUser;
     return userWithoutPassword;

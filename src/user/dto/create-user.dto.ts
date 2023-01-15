@@ -6,7 +6,7 @@ export class CreateUserDto extends PickType(User, [
   'email',
   'firstName',
   'lastName',
-  'birthDate',
+  'age',
 ] as const) {
   @IsString()
   @IsNotEmpty()
