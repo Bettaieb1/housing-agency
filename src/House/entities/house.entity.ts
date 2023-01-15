@@ -1,6 +1,7 @@
 import {
   IsBoolean,
   IsDateString,
+  IsNumber,
   IsString,
   MaxLength,
   MinLength,
@@ -18,6 +19,24 @@ export class House {
   @MaxLength(15)
   @MinLength(3)
   public address: string;
+
+  @Column()
+  @IsString()
+  @MinLength(3)
+  @MaxLength(100)
+  description: string;
+
+  @Column()
+  @IsNumber()
+  surface: number;
+
+  @Column()
+  @IsNumber()
+  price: number;
+
+  @Column()
+  @IsNumber()
+  numberOfRooms: number;
 
   @Column()
   @IsBoolean()
