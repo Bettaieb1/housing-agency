@@ -11,7 +11,6 @@ import {
 import { HouseService } from './house.service';
 import { CreateHouseDto } from './dto/create-house.dto';
 import { UpdateHouseDto } from './dto/update-house.dto';
-import { House } from './entities/house.entity';
 
 @Controller('house')
 export class HouseController {
